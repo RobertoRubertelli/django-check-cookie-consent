@@ -50,11 +50,15 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = "email"
 
-    def get_full_name(self):
-        return self.full_name
+    def get_title(self):
+        return self.title
 
-    def get_short_name(self):
-        return self.short_name
+
+    def get_name(self):
+        return self.name
+
+    def get_surname(self):
+        return self.surname
 
     def __str__(self):
-        return f"{self.email} ({self.full_name})"
+        return f"{self.email} ({self.name}) ({self.surname})"
