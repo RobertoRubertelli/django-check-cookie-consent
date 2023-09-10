@@ -1,0 +1,40 @@
+{% extends '_base.html' %}
+{% load static %}
+
+    {% block nav %}
+
+        <nav>
+        
+            <div class="navr"><li><a  href="{% url 'home' %}">Home</a></li></div> 
+        
+
+        </nav>
+    {% endblock nav %}
+
+
+    {% block content %}
+        <div>    
+            <body>
+
+
+                <br>
+                <div class='container'>
+                    <h4>Login Page</h4>
+
+                    <form method='post'
+                    >
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button class="btn btn-primary" type="submit">Log in</button> 
+                    </form>
+
+                    <br>
+                    <br>
+                    <div><li><a href="{% url 'account_reset_password' %}">Forgot Your Password?</a></li></div>    
+    
+                </div>
+
+                          
+            </body>
+        </div>
+    {% endblock content %}

@@ -1,0 +1,51 @@
+{% extends '_base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+{% block title %}Django Consent  {% endblock %}
+
+{% block nav %}
+
+    <nav >
+
+        <h4>Home</h4>
+        {% if user.is_authenticated %}
+            <div><li><a  href="{% url 'account_logout' %}">Log Out</a></li></div> 
+            <div><p>Hi {{ user.name }} welcome, you are logged in </p></div>
+
+        {% else %}
+        <br>
+        <br>
+            <div><li><a  href="{% url 'checkconsentsignup' %}">Sign Up</a></li></div>
+            <br> 
+            <div><li><a  href="{% url 'checkconsent' %}">Log In</a></li></div>  
+
+        {% endif %} 
+
+    </nav>
+
+{% endblock nav %}
+
+
+
+{% block content %}
+
+<body>
+
+<div style="float:left;" class="mycontainer">
+
+{% comment %} here the alert if the visitor didn't accepted the cookie {% endcomment %}
+    {% if mymsg %}
+        <script>
+            alert('{{ mymsg }}');
+        </script>
+    {% endif %}
+
+
+</body>
+
+{% endblock content %}
+
+</html>

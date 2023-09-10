@@ -1,8 +1,12 @@
-# Django start point configuration
-
-django with Custom User Model AbstractBaseUser class and Django-Allauth
+# Django Cookie Consent with django-allauth and cookiechoises.js
 
 ####
+GDPR law is an important subject to respect.
+I have to be sure the visitor accepted the cookie before the Sign Up and the Log In.
+I'm using the cookiechoices.js library. It is the google help for this subject.
+I'm adding 3 django functions in the pages app, to finish the js library job.
+
+My Site [Managepy.it](https://www.managepy.it/)
 
 
 ## Getting started
@@ -10,15 +14,22 @@ django with Custom User Model AbstractBaseUser class and Django-Allauth
 ## Setup
 
 Follow these instructions to try this demo out locally.
-I'm using pipenv, you can use pip instead for the virtual environment and install.
+I'm using pipenv.
 
 ```bash
 
-Pipenv Install requirements.txt in a new virtual environment
+# Install requirements.txt in a new virtual environment
+pipenv install -r requirements.txt
+# activate the shell
 pipenv shell
-django-admin startproject myweb .
-pypenv manage.py startapp users
-setting.py for users
-setting.py for allauth
-python manage.py migrate
-python manage.py createsuperuser
+
+# Clone Git folders yourself
+
+# Setup database.
+./manage.py migrate
+
+# Run the development server.
+./manage.py runserver
+
+# Now you can view the project at http://localhost:8000
+```
