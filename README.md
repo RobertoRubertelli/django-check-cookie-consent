@@ -1,5 +1,7 @@
 # Django Cookie Consent with django-allauth and cookiechoises.js
+
 ####
+
 [Link to Git-Hub Source File](https://github.com/RobertoRubertelli/django-check-cookie-consent)
 
 GDPR law is an important subject to respect.
